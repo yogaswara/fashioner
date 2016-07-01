@@ -1,5 +1,7 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>{{$title}}</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="{{$description}}">
 <meta name="keywords" content="{{$keywords}}">
 <meta name="rating" content="general">
@@ -12,5 +14,5 @@
 <meta name="DC.Subject" content="{{$keywords}}">
 <meta name="DC.Description" content="{{$description}}">
 <link rel="canonical" href="{{URL::full()}}">
-<link rel="commerca-theme" href="{{dirTemaToko()}}commerca/">
+<link rel="fashioner-theme" href="{{dirTemaToko()}}fashioner/">
 {{favicon()}}

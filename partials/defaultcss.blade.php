@@ -1,1 +1,13 @@
-{{generate_theme_css('yourthemename/assets/css/style.css')}}
+{{generate_theme_css('fashioner/assets/css/style.css')}} 
+{{generate_theme_css('fashioner/assets/css/bootstrap.min.css')}} 
+{{generate_theme_css('fashioner/assets/css/font-awesome.css')}} 
+{{generate_theme_css('fashioner/assets/css/prettyPhoto.css')}} 
+{{generate_theme_css('fashioner/assets/css/jcf.css')}} 
+{{generate_theme_css('fashioner/assets/css/owl.carousel.css')}} 
+{{generate_theme_css('fashioner/assets/css/owl.theme.css')}} 
+{{generate_theme_css('fashioner/assets/css/flaticon.css')}} 
+{{generate_theme_css('fashioner/assets/css/icomoon.css')}} 
+{{generate_theme_css('fashioner/assets/css/transitions.css')}} 
+{{generate_theme_css('fashioner/assets/css/main.css')}} 
+{{generate_theme_css('fashioner/assets/css/responsive.css')}} 
+{{generate_theme_css('fashioner/assets/css/color.css')}} 
