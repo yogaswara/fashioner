@@ -31,46 +31,8 @@
 							</ul>
 						</div>
 					</div>
-					<div class="dropdown cart">
-						<button aria-expanded="true" aria-haspopup="true" data-toggle="dropdown" id="cart" type="button" class="btn-dropdown btn-cartitems">
-							<em class="fa fa-shopping-cart"></em>
-							<span>cart</span>
-							<em class="fa fa-caret-down"></em>
-						</button>
-						<div class="dropdown-menu cartitems">
-							<div class="top-arrow">
-								<!--<p>You have no items in your cart</p>-->
-								<strong class="title">Recently added item(s)</strong>
-								<ul class="cart-list">
-									<li>
-										<div class="product-img">
-											<img alt="image description" src="images/thumbnail/thumbnail-01.jpg">
-										</div>
-										<div class="detail">
-											<span class="product-title">Product Tilte Here</span>
-											<span class="price">Price: $68</span>
-											<span class="quantity">Quantity: 01</span>
-										</div>
-										<i class="btn-delete-item"><a href="#">X</a></i>
-									</li>
-									<li>
-										<div class="product-img">
-											<img alt="image description" src="images/thumbnail/thumbnail-02.jpg">
-										</div>
-										<div class="detail">
-											<span class="product-title">Product Tilte Here</span>
-											<span class="price">Price: $68</span>
-											<span class="quantity">Quantity: 01</span>
-										</div>
-										<i class="btn-delete-item"><a href="#">X</a></i>
-									</li>
-								</ul>
-								<div class="btn-area">
-									<a class="theme-btn-sm btn-viewall" href="cart.html">Checkout</a>
-									<a class="theme-btn-sm btn-checkout" href="checkout.html">View</a>
-								</div>
-							</div>
-						</div>
+					<div class="dropdown cart" id="shoppingcartplace">
+						{{ shopping_cart() }} 
 					</div>
 					<ul class="social-icon">
 					    @if(!empty($kontak->fb))
@@ -92,7 +54,7 @@
 						<li><a href="{{url($kontak->tl)}}" target="_blank"><i class="fa fa-tumblr icn"></i></a></li>
 						@endif
 						@if(!empty($kontak->picmix))
-						<li><a href="{{url($kontak->picmix)}}" target="_blank"><img src="https://s3-ap-southeast-1.amazonaws.com/cdn2.jarvis-store.com/blogs/event/icon-picmix.png"></a></li>
+						<li><a href="{{url($kontak->picmix)}}" target="_blank"><img class="picmix-top" src="https://s3-ap-southeast-1.amazonaws.com/cdn2.jarvis-store.com/blogs/event/icon-picmix.png"></a></li>
 						@endif
 					</ul>
 				</div>
@@ -109,8 +71,8 @@
 					<span class="icon-bar"></span>
 				</button>
 				<strong class="logo">
-					<a href="index.html">
-						<img src="images/logo.png" alt="image description">
+					<a href="{{ url("/") }}">
+						<img src="{{ logo_image_url() }}" alt="Logo {{ Theme::place('title') }}">
 					</a>
 				</strong>
 			</div>
@@ -118,12 +80,7 @@
 				<div class="row">
 					<ul>
 						<li class="dropdown active">
-							<a href="index.html">Main</a>
-							<ul class="dropdown-menu">
-								<li class="active"><a href="index.html">index One</a></li>
-								<li><a href="index-team.html">Index two</a></li>
-								<li><a href="index-footer-variation.html">index three</a></li>
-							</ul>
+							<a href="{{ url('/') }}">Home</a>
 						</li>
 						<li><a href="about-us.html">About</a></li>
 						<li class="dropdown">

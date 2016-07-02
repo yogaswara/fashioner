@@ -105,6 +105,7 @@
 	-ms-transform: scale(1);
 	transform: scale(1);
 }
+
 @media (max-width:700px){
     .cs-text-cut span {
         font-size: 50px;

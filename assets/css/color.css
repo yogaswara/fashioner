@@ -217,3 +217,11 @@ a:hover, a:focus, a:active,
 .dropdown-menu.cartitems .btn-area .theme-btn-sm.btn-viewall,
 .dropdown-menu.cartitems .btn-area .theme-btn-sm.btn-checkout,
 .dropdown, .btn-dropdown {background: none;}
+
+.picmix-top { margin-top: -12px; }
+.picmix-bottom { margin-top: -10px; }
+.quicklink a { color: #313131 }
+.quicklink a:hover { color: #ff7300 }
+.footer-bar p a { color: #fff; }
+.footer-bar p a:hover { text-decoration: underline; }
+.thumb-cart { width: 50px }

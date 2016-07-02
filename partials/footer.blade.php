@@ -7,147 +7,58 @@
 			<div class="row">
 				<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 footer-col">
 					<div class="heading-leftborder">
-						<h2>About Fashioners</h2>
+						<h2>About {{ $kontak->nama }}</h2>
 					</div>
 					<div class="description">
-						<p>Maecenas etos sit amet, consecte cing elit. Terminal volutpat rutrum amet sollicitudin interdum.Ante tellus gravida mollis tellus elit. Mauris adipiscing mauris cenas etos sit amet, consecte cing elit.</p>
+						<p>{{ short_description(about_us()->isi,400) }}</p>
 					</div>
 					<ul class="social-icon theme-social-con pull-left">
-						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-						<li><a href="#"><i class="fa fa-tumblr"></i></a></li>
-						<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-						<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-						<li><a href="#"><i class="fa fa-rss"></i></a></li>
+						@if(!empty($kontak->fb))
+						<li><a href="{{ url($kontak->fb) }}" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+						@endif
+						@if(!empty($kontak->tw))
+						<li><a href="{{ url($kontak->tw) }}" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+						@endif
+						@if(!empty($kontak->pt))
+						<li><a href="{{ url($kontak->pt) }}" target="_blank" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+						@endif
+						@if(!empty($kontak->gp))
+						<li><a href="{{ url($kontak->gp) }}" target="_blank" title="Google Plus"><i class="fa fa-google-plus"></i></a></li>
+						@endif
+						@if(!empty($kontak->tl))
+						<li><a href="{{ url($kontak->tl) }}" target="_blank" title="Tumblr"><i class="fa fa-tumblr"></i></a></li>
+						@endif
+						@if(!empty($kontak->ig))
+						<li><a href="{{ url($kontak->ig) }}" target="_blank" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+						@endif
+						@if(!empty($kontak->picmix))
+						<li>
+							<a href="{{ url($kontak->picmix) }}" target="_blank" title="Picmix">
+								<img class="picmix-bottom" src="https://s3-ap-southeast-1.amazonaws.com/cdn2.jarvis-store.com/blogs/event/icon-picmix.png">
+							</a>
+						</li>
+						@endif
 					</ul>
 				</div>
 				<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 footer-col">
 					<div class="heading-leftborder">
-						<h2>Instagram Feed</h2>
+						<h2>Quick Link</h2>
 					</div>
-					<ul class="instagram-gallery">
-						<li>
-							<a href="images/instagram/large/img-01.jpg" data-rel="prettyPhoto[gallery1]">
-								<img src="images/instagram/thumbnail/thumb-01.jpg" alt="image description">
-								<div class="img-hover">
-									<div class="holder">
-										<span>+</span>
-									</div>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a href="images/instagram/large/img-02.jpg" data-rel="prettyPhoto[gallery1]">
-								<img src="images/instagram/thumbnail/thumb-02.jpg" alt="image description">
-								<div class="img-hover">
-									<div class="holder">
-										<span>+</span>
-									</div>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a href="images/instagram/large/img-03.jpg" data-rel="prettyPhoto[gallery1]">
-								<img src="images/instagram/thumbnail/thumb-03.jpg" alt="image description">
-								<div class="img-hover">
-									<div class="holder">
-										<span>+</span>
-									</div>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a href="images/instagram/large/img-04.jpg" data-rel="prettyPhoto[gallery1]">
-								<img src="images/instagram/thumbnail/thumb-04.jpg" alt="image description">
-								<div class="img-hover">
-									<div class="holder">
-										<span>+</span>
-									</div>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a href="images/instagram/large/img-05.jpg" data-rel="prettyPhoto[gallery1]">
-								<img src="images/instagram/thumbnail/thumb-05.jpg" alt="image description">
-								<div class="img-hover">
-									<div class="holder">
-										<span>+</span>
-									</div>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a href="images/instagram/large/img-06.jpg" data-rel="prettyPhoto[gallery1]">
-								<img src="images/instagram/thumbnail/thumb-06.jpg" alt="image description">
-								<div class="img-hover">
-									<div class="holder">
-										<span>+</span>
-									</div>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a href="images/instagram/large/img-07.jpg" data-rel="prettyPhoto[gallery1]">
-								<img src="images/instagram/thumbnail/thumb-07.jpg" alt="image description">
-								<div class="img-hover">
-									<div class="holder">
-										<span>+</span>
-									</div>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a href="images/instagram/large/img-08.jpg" data-rel="prettyPhoto[gallery1]">
-								<img src="images/instagram/thumbnail/thumb-08.jpg" alt="image description">
-								<div class="img-hover">
-									<div class="holder">
-										<span>+</span>
-									</div>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a href="images/instagram/large/img-09.jpg" data-rel="prettyPhoto[gallery1]">
-								<img src="images/instagram/thumbnail/thumb-09.jpg" alt="image description">
-								<div class="img-hover">
-									<div class="holder">
-										<span>+</span>
-									</div>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a href="images/instagram/large/img-10.jpg" data-rel="prettyPhoto[gallery1]">
-								<img src="images/instagram/thumbnail/thumb-10.jpg" alt="image description">
-								<div class="img-hover">
-									<div class="holder">
-										<span>+</span>
-									</div>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a href="images/instagram/large/img-11.jpg" data-rel="prettyPhoto[gallery1]">
-								<img src="images/instagram/thumbnail/thumb-11.jpg" alt="image description">
-								<div class="img-hover">
-									<div class="holder">
-										<span>+</span>
-									</div>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a href="images/instagram/large/img-12.jpg" data-rel="prettyPhoto[gallery1]">
-								<img src="images/instagram/thumbnail/thumb-12.jpg" alt="image description">
-								<div class="img-hover">
-									<div class="holder">
-										<span>+</span>
-									</div>
-								</div>
-							</a>
-						</li>
+					<ul class="quicklink">
+					@foreach(all_menu() as $key=>$menu)
+						@if($key == 1 || $key == 2)
+							@foreach($menu->link as $link_menu)
+							@if($menu->id == $link_menu->tautanId)
+							<li>
+								<a href="{{ menu_url($link_menu) }}">{{ $link_menu->nama }}</a>
+							</li>
+							@endif
+							@endforeach
+						@endif
+					@endforeach
 					</ul>
 				</div>
+				<div class="clearfix visible-xs"></div>
 				<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 footer-col">
 					<div class="heading-leftborder">
 						<h2>News Letter</h2>
@@ -174,19 +85,34 @@
 					<ul class="info-area">
 						<li>
 							<strong>Address:</strong>
-							<address>44-46 Morningside Road Edinburgh, Scotland EH10 4BF</address>
+							<address>{{ $kontak->alamat }}</address>
 						</li>
 						<li>
 							<strong>Phone:</strong>
 							<em>
-								<i>+000 12345678 - Office</i>
-								<i>+000 12345678 - Fax</i>
+								@if(!empty($kontak->telepon))
+								<i>{{ $kontak->telepon }}</i>
+								@endif
+								@if(!empty($kontak->hp))
+								<i>{{ $kontak->hp }} - mobile</i>
+								@endif
+								@if(!empty($kontak->bb))
+								<i>{{ $kontak->bb }} - BBM</i>
+								@endif
 							</em>
 						</li>
 						<li>
 							<strong>Email:</strong>
-							<em><a href="support@sitename.com">support@sitename.com</a></em>
+							<em><a href="mailto:{{ $kontak->email }}">{{ $kontak->email }}</a></em>
 						</li>
+						@if(!empty($kontak->ym))
+						<li>
+							<strong>Chat:</strong>
+							<em>
+								<i>{{ ymyahoo($kontak->ym) }}</i>
+							</em>
+						</li>
+						@endif
 					</ul>
 				</div>
 			</div>
@@ -195,10 +121,26 @@
 	<div class="footer-bar haslayout">
 		<div class="container">
 			<div class="pull-left left">
-				<p>&copy; 2015 | All Rights Reserved</p>
+				<p>&copy; <a href="{{url('home')}}">{{ short_description(Theme::place('title'),80) }} {{date('Y')}}</a> | All Rights Reserved. Powered by <a class="title-copyright" href="http://jarvis-store.com" target="_blank"> Jarvis Store</a></p>
 			</div>
 			<div class="pull-right right">
-				<img src="images/icon-payment.png" alt="image description">
+				@foreach(list_banks() as $bank)
+				<img src="{{ bank_logo($bank) }}" alt="{{ $bank->bankdefault->nama }}" title="{{ $bank->bankdefault->nama }}">
+				@endforeach
+				@foreach(list_payments() as $pay)
+					@if($pay->nama == 'ipaymu' && $pay->aktif == 1)
+					<img src="{{url('img/bank/ipaymu.jpg')}}" alt="ipaymu" title="Ipaymu" />
+					@endif
+					@if($pay->nama == 'bitcoin' && $pay->aktif == 1)
+					<img src="{{url('img/bitcoin.png')}}" alt="bitcoin" title="Bitcoin" />
+					@endif
+				@endforeach
+				@if(count(list_dokus()) > 0 && list_dokus()->status == 1)
+				<img src="{{url('img/bank/doku.jpg')}}" alt="doku myshortcart" title="Doku" />
+				@endif
+				@if(count(list_veritrans()) > 0 && list_veritrans()->status == 1 && list_veritrans()->type == 1)
+				<img src="{{url('img/bank/veritrans.png')}}" alt="Veritrans" title="Veritrans">
+				@endif
 			</div>
 		</div>
 	</div>
@@ -206,3 +148,4 @@
 <!--************************************
 		Footer End
 *************************************-->
+{{pluginPowerup()}} 
