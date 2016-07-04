@@ -2,9 +2,10 @@
 		Slider Start
 *************************************-->
 <section id="home-slider" class="home-slider haslayout">
+	@foreach(slideshow() as $slide)
 	<div class="item">
 		<figure>
-			<img src="images/slider/01-img.jpg" alt="image description">
+			<img src="{{ slide_image_url($slide->gambar) }}" alt="{{ $slide->title }}">
 		</figure>
 		<div class="postion-absolute">
 			<div class="container display-table">
@@ -22,7 +23,8 @@
 			</div>
 		</div>
 	</div>
-	<div class="item">
+	@endforeach
+	<!-- <div class="item">
 		<figure>
 			<img src="images/slider/02-img.jpg" alt="image description">
 		</figure>
@@ -41,7 +43,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 </section>
 <!--************************************
 		Slider End
