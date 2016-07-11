@@ -63,17 +63,14 @@
 					<div class="heading-leftborder">
 						<h2>News Letter</h2>
 					</div>
-					<p>Maecenas etos sit amet, consecte cing elit. Terminal volutpat rutrum.</p>
-					<form class="newsletter-form">
+					<p>Be the first to know about new arrivals, exclusive offers and trend news</p>
+					<form class="newsletter-form" action="{{@$mailing->action}}" method="post">
 						<fieldset>
 							<div class="form-group">
-								<input type="text" placeholder="Name" class="form-control theme-style">
-							</div>
-							<div class="form-group">
-								<input type="email" placeholder="Email" class="form-control theme-style">
+								<input type="email" placeholder="Email" class="form-control theme-style" name="email" required {{ @$mailing->action==''? 'disabled=""' : ''}}>
 							</div>
 							<div class="form-group pull-left">
-								<button type="submit" class="theme-btn">Send</button>
+								<button type="submit" class="theme-btn" {{ @$mailing->action==''?'disabled="disabled" style="opacity: 0.5; cursor: default;"':'' }}>Send</button>
 							</div>
 						</fieldset>
 					</form>
@@ -101,10 +98,12 @@
 								@endif
 							</em>
 						</li>
+						@if(!empty($kontak->email))
 						<li>
 							<strong>Email:</strong>
 							<em><a href="mailto:{{ $kontak->email }}">{{ $kontak->email }}</a></em>
 						</li>
+						@endif
 						@if(!empty($kontak->ym))
 						<li>
 							<strong>Chat:</strong>
@@ -121,25 +120,27 @@
 	<div class="footer-bar haslayout">
 		<div class="container">
 			<div class="pull-left left">
-				<p>&copy; <a href="{{url('home')}}">{{ short_description(Theme::place('title'),80) }} {{date('Y')}}</a> | All Rights Reserved. Powered by <a class="title-copyright" href="http://jarvis-store.com" target="_blank"> Jarvis Store</a></p>
+				<p>&copy; <a href="{{url('home')}}">{{ short_description(Theme::place('title'),80) }} {{ date('Y') }}</a> | All Rights Reserved. Powered by <a class="title-copyright" href="//jarvis-store.com" target="_blank"> Jarvis Store</a></p>
 			</div>
 			<div class="pull-right right">
 				@foreach(list_banks() as $bank)
+				@if($bank->status == 1)
 				<img src="{{ bank_logo($bank) }}" alt="{{ $bank->bankdefault->nama }}" title="{{ $bank->bankdefault->nama }}">
+				@endif
 				@endforeach
 				@foreach(list_payments() as $pay)
 					@if($pay->nama == 'ipaymu' && $pay->aktif == 1)
-					<img src="{{url('img/bank/ipaymu.jpg')}}" alt="ipaymu" title="Ipaymu" />
+					<img src="{{ url('img/bank/ipaymu.jpg') }}" alt="ipaymu" title="Ipaymu">
 					@endif
 					@if($pay->nama == 'bitcoin' && $pay->aktif == 1)
-					<img src="{{url('img/bitcoin.png')}}" alt="bitcoin" title="Bitcoin" />
+					<img src="{{ url('img/bitcoin.png') }}" alt="bitcoin" title="Bitcoin">
 					@endif
 				@endforeach
 				@if(count(list_dokus()) > 0 && list_dokus()->status == 1)
-				<img src="{{url('img/bank/doku.jpg')}}" alt="doku myshortcart" title="Doku" />
+				<img src="{{ url('img/bank/doku.jpg') }}" alt="doku myshortcart" title="Doku">
 				@endif
 				@if(count(list_veritrans()) > 0 && list_veritrans()->status == 1 && list_veritrans()->type == 1)
-				<img src="{{url('img/bank/veritrans.png')}}" alt="Veritrans" title="Veritrans">
+				<img src="{{ url('img/bank/veritrans.png') }}" alt="Veritrans" title="Veritrans">
 				@endif
 			</div>
 		</div>
@@ -148,4 +149,4 @@
 <!--************************************
 		Footer End
 *************************************-->
-{{pluginPowerup()}} 
+{{ pluginPowerup() }} 

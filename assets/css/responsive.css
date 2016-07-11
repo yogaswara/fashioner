@@ -4,7 +4,7 @@
 @media (max-width:1400px){
 }
 @media (max-width:1280px){
-	body.home #main {margin-top: -160px;}
+	body.home #main {margin-top: 0;}
 	.grid-item .data-box {padding: 15px;}
 }
 @media (max-width:1199px){
@@ -24,6 +24,7 @@
 	}
 	#content .post .img-hover {bottom: -113px;}
 	.banner-content {padding: 20px 20px 20px 40%;}
+	.product-banner .img-responsive { height: auto; }
 	.product-banner img {
 		height: 230px;
 		width: auto;
@@ -38,9 +39,11 @@
 	#gallery-cats li a{ padding:0 20px;}
 	.sorry .leftbox {padding: 15px 0;}
 	.men-img {margin: -260px 0 0;}
+	.artikel { padding-top: 0; clear: both; }
+	.artikel .border-left { border-color: transparent; }
 }
 @media (max-width:1024px){
-	body.home #main {margin-top: -159px;}
+	body.home #main {margin-top: 0;}
 	.grid-item .data-box .heading-pattern{ margin:0 0 10px;}
 	.grid-item .data-box .heading-pattern h2{
 		line-height:25px;
@@ -136,6 +139,9 @@
 	.heading-pattern h2 { font-size:26px;}
 	.member{margin: 0 0 30px;}
 	.widget{padding: 0 15px 30px;}
+}
+@media (max-width: 975px){
+	#add-testimonial { background-image: none; }
 }
 @media (max-width:800px){
 	body.home #main {margin-top: -80px;}
@@ -434,6 +440,7 @@
 	}
 	.footer-bar img{ margin:0 auto;}
 	.banner-content .description{ display:none;}
+	.product-banner .img-responsive { height: auto; }
 	.product-banner img {
 		height:150px;
 	}

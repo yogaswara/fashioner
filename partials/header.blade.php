@@ -35,7 +35,8 @@
 						<div aria-labelledby="languages" class="dropdown-menu languages">
 							<ul class="top-arrow">
 								<li><a href="{{ url('member') }}">Order History</a></li>
-								<li><a href="{{ url('konfirmasiorder') }}">Konfirmasi Order</a></li>
+								<li><a href="{{ url('member/profile/edit') }}">Update Profile</a></li>
+								<li><a href="{{ url('konfirmasiorder') }}">Order Confirmation</a></li>
 								<li><a href="{{ url('logout') }}">Logout</a></li>
 							</ul>
 						</div>
@@ -61,10 +62,14 @@
 						<li><a href="{{ url($kontak->ig) }}" target="_blank"><i class="fa fa-instagram"></i></a></li>
 						@endif
 						@if(!empty($kontak->tl))
-						<li><a href="{{url($kontak->tl)}}" target="_blank"><i class="fa fa-tumblr icn"></i></a></li>
+						<li><a href="{{ url($kontak->tl) }}" target="_blank"><i class="fa fa-tumblr"></i></a></li>
 						@endif
 						@if(!empty($kontak->picmix))
-						<li><a href="{{url($kontak->picmix)}}" target="_blank"><img class="picmix-top" src="https://s3-ap-southeast-1.amazonaws.com/cdn2.jarvis-store.com/blogs/event/icon-picmix.png"></a></li>
+						<li>
+							<a href="{{ url($kontak->picmix) }}" target="_blank">
+								<img class="picmix-top" src="https://s3-ap-southeast-1.amazonaws.com/cdn2.jarvis-store.com/blogs/event/icon-picmix.png">
+							</a>
+						</li>
 						@endif
 					</ul>
 				</div>
@@ -90,45 +95,10 @@
 				<div class="row">
 					<ul>
 						@foreach(main_menu()->link as $key=>$link)
-						<li class="dropdown">
+						<li class="dropdown{{ Request::url() == menu_url($link) ? ' active' : '' }}">
 							<a href="{{ menu_url($link) }}">{{ $link->nama }}</a>
 						</li>
 						@endforeach
-						<!--
-							<li><a href="about-us.html">About</a></li>
-							<li class="dropdown">
-								<a href="product-grid.html">shop</a>
-								<ul class="dropdown-menu">
-									<li><a href="product-grid.html">product grid</a></li>
-									<li><a href="product-list.html">product list</a></li>
-									<li><a href="product-single.html">product single</a></li>
-								</ul>
-							</li>
-							<li class="dropdown">
-								<a href="gallery-filterable.html">gallery</a>
-								<ul class="dropdown-menu">
-									<li><a href="gallery-filterable.html">gallery filterable</a></li>
-									<li><a href="gallery-masonry.html">gallery masonry</a></li>
-								</ul>
-							</li>
-							<li class="dropdown">
-								<a href="blog.html">Blog</a>
-								<ul class="dropdown-menu">
-									<li><a href="blog.html">blog</a></li>
-									<li><a href="blog-list.html">blog list</a></li>
-									<li><a href="blog-grid.html">blog grid</a></li>
-									<li><a href="blog-detail.html">blog detail</a></li>
-								</ul>
-							</li>
-							<li class="dropdown">
-								<a href="#">Pages</a>
-								<ul class="dropdown-menu">
-									<li><a href="404.html">404</a></li>
-									<li><a href="coming-soon.html">Coming soon</a></li>
-								</ul>
-							</li>
-							<li><a href="contactus.html">Contacts</a></li>
-						-->
 					</ul>
 				</div>
 			</div>

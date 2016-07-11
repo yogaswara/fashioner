@@ -60,6 +60,6 @@ return array(
         'testimonial'=>4,    
     ),
     'banner' => true,
-    'themesColor' => array(),
-    'layout' => array(),
+    'themesColor' => false,
+    'layout' => false,
 );

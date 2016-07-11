@@ -35,7 +35,7 @@ $(document).ready(function(e) {
 		CUSTOM FORM
 	-------------------------------------- */
 	$(function() {
-		jcf.replaceAll();
+		// jcf.replaceAll();
 	});
 	/* -------------------------------------
 		HOME SLIDER
@@ -58,6 +58,7 @@ $(document).ready(function(e) {
 	(function ( $ ) {
 		var sync1 = $("#sync1");
 		var sync2 = $("#sync2");
+		var blogs = $("#recent-blog");
 		sync1.owlCarousel({
 			singleItem : true,
 			slideSpeed : 1000,
@@ -67,15 +68,15 @@ $(document).ready(function(e) {
 			responsiveRefreshRate : 200,
 		});
 		sync2.owlCarousel({
-			items : 3,
-			itemsDesktop      : [1199,2],
-			itemsDesktopSmall     : [979,2],
-			itemsTablet       : [768,3],
-			itemsTabletSmall : [640,3],
-			itemsMobile       : [479,2],
-			pagination:false,
-			responsiveRefreshRate : 100,
-			navigation : true,
+			items 					: 3,
+			itemsDesktop 			: [1199,2],
+			itemsDesktopSmall 		: [979,2],
+			itemsTablet 			: [768,3],
+			itemsTabletSmall 		: [640,3],
+			itemsMobile 			: [479,2],
+			pagination 				: false,
+			responsiveRefreshRate 	: 100,
+			navigation 				: true,
 			navigationText: [
 				"<i class='fa fa-angle-left'></i>",
 				"<i class='fa fa-angle-right'></i>"
@@ -83,6 +84,22 @@ $(document).ready(function(e) {
 			afterInit : function(el){
 				el.find(".owl-item").eq(0).addClass("synced");
 			}
+		});
+		blogs.owlCarousel({
+			items 					: 2,
+			itemsDesktop 			: [1199,2],
+			itemsDesktopSmall 		: [979,2],
+			itemsTablet 			: [768,2],
+			itemsTabletSmall 		: [640,2],
+			itemsMobile 			: [479,1],
+			// itemsCustom				: [[992,3],[1000,3]],
+			pagination 				: false,
+			responsiveRefreshRate 	: 100,
+			navigation 				: true,
+			navigationText: [
+				"<i class='fa fa-angle-left'></i>",
+				"<i class='fa fa-angle-right'></i>"
+			],
 		});
 		function syncPosition(el){
 			var current = this.currentItem;
@@ -250,7 +267,8 @@ $(document).ready(function(e) {
 	var $optionSets = $('.option-set');
 	var $optionLinks = $optionSets.find('a');
 	function doIsotopeFilter() {
-		if ($().isotope) {
+		console.log($(this));
+		if ($(this).isotope) {
 			var isotopeFilter = '';
 			$optionLinks.each(function () {
 				var selector = $(this).attr('data-filter');
@@ -316,6 +334,12 @@ $(document).ready(function(e) {
 			"<i class='fa fa-angle-left'></i>",
 			"<i class='fa fa-angle-right'></i>"
 		]
+	});
+	$(".side-testi").owlCarousel({
+		autoPlay: true,
+		singleItem:true,
+		pagination : false,
+		navigation : false
 	});
 	/* -------------------------------------
 		PRETTY PHOTO GALLERY
@@ -390,8 +414,10 @@ $(document).ready(function(e) {
 	/* -------------------------------------
 			Google Map
 	-------------------------------------- */
+	var alamat = document.getElementsByTagName("address")[0].innerHTML;
+	// var alamat = 'Bandung';
 	$("#gmap").gmap3({
-		marker:{address: "Haltern am See, Weseler Str. 151"},
+		marker:{address: alamat},
 		map:{ options:{ zoom: 16}}
 	});
 	/* -------------------------------------
@@ -432,7 +458,7 @@ $(document).ready(function(e) {
 	-------------------------------------- */
 	if ($(document.body).hasClass('home')) {
 		// set the date we're counting down to
-		var target_date = new Date('Jan, 31, 2016').getTime();
+		/*var target_date = new Date('Jan, 31, 2016').getTime();
 		// variables for time units
 		var days, hours, minutes, seconds;
 		// get tag element
@@ -452,7 +478,7 @@ $(document).ready(function(e) {
 			// format countdown string + set tag value
 			countdown.innerHTML = '<span class="days">' + days +  ' <i>Days</i></span>   <span class="hours">' + hours + ' <i>Hours</i></span>   <span class="minutes">'
 			+ minutes + ' <i>Minutes</i></span>   <span class="seconds">' + seconds + ' <i>Seconds</i></span>';  
-		}, 1000);
+		}, 1000);*/
 	}
 	/* -------------------------------------
 			ISOTOPE GALLERY

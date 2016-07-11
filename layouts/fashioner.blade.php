@@ -9,7 +9,11 @@
 		{{ Theme::partial('defaultcss') }}
 		{{ Theme::asset()->styles() }}  
 	</head>
+	@if( Request::url() == url('home') || Request::url() == url('/'))
 	<body class="home">
+	@else
+	<body>
+	@endif
 		<!--[if lt IE 8]>
 			<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
@@ -19,10 +23,7 @@
 		<div id="wrapper">
 			{{ Theme::partial('header') }}
 			{{ Theme::partial('slider') }} 
-			
-			<main id="main" class="haslayout">
-				{{ Theme::place('content') }}
-			</main>
+			{{ Theme::place('content') }}
 			
 			{{-- Theme::partial('subscribe') --}}
 			{{ Theme::partial('footer') }}

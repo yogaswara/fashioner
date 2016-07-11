@@ -15,10 +15,10 @@
 				</div>
 				<div class="detail">
 					<span class="product-title">{{ $cart['name'] }}</span>
-					<span class="price">Price: {{ $cart['price'] }}</span>
+					<span class="price">Price: {{ price($cart['price']) }}</span>
 					<span class="quantity">Quantity: {{ $cart['qty'] }}</span>
 				</div>
-				<i class="btn-delete-item"><a href="{{'javascript:deletecartdialog('."'".$cart['rowid']."'".')'}}">X</a></i>
+				<i class="btn-delete-item remove-item"><a href="{{'javascript:deletecartdialog('."'".$cart['rowid']."'".')'}}">X</a></i>
 			</li>
 			@endforeach
 		</ul>

@@ -11,39 +11,25 @@
 			<div class="container display-table">
 				<div class="display-table-cell">
 					<div class="slide-caption">
+						@if(!empty($slide->title))
 						<div class="heading-twopx-border">
-							<h1>Buy less, Choose <span>well</span></h1>
+							<h1>{{ $slide->title }}</h1>
 						</div>
+						@endif
+						@if(!empty($slide->text))
 						<div class="description">
-							<p>natus error sit volupt atem accusantium dolor emque totam rem aperiam eaque.</p>
+							<p>{{ $slide->text }}</p>
 						</div>
-						<a class="theme-btn btn-shopnow" href="#">shop now</a>
+						@endif
+						@if(!empty($slide->title) && !empty($slide->url) || !empty($slide->text) && !empty($slide->url))
+						<a class="theme-btn btn-shopnow" href="{{ filter_link_url($slide->url) }}">shop now</a>
+						@endif
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	@endforeach
-	<!-- <div class="item">
-		<figure>
-			<img src="images/slider/02-img.jpg" alt="image description">
-		</figure>
-		<div class="postion-absolute">
-			<div class="container display-table">
-				<div class="display-table-cell">
-					<div class="slide-caption">
-						<div class="heading-twopx-border">
-							<h1>Buy less, Choose <span>well</span></h1>
-						</div>
-						<div class="description">
-							<p>Sed ut perspiciatis unde atem accusantium dolor emque totam rem aperiam eaque.</p>
-						</div>
-						<a class="theme-btn btn-shopnow" href="#">shop now</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div> -->
 </section>
 <!--************************************
 		Slider End

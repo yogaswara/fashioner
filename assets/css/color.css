@@ -71,6 +71,7 @@
 .dropdown-menu.cartitems strong.title,
 .btn-dropdown i{color:#dddcdc;}
 .theme-btn-sm,
+.register-btn,
 #nav ul li a,
 .home-slider figcaption .description,
 .service .description,
@@ -96,7 +97,8 @@
 .theme-nav-tabs li a,
 .size-guide a,
 .quantity-sapn em,
-.social-icon li a:hover i{ color:#313131;}
+.social-icon li a:hover i,
+.artikel > .viewall > a{ color:#313131;}
 .icon,
 .sale-tag-sm,
 .sale-tag-lg,
@@ -146,7 +148,8 @@ a:hover, a:focus, a:active,
 .page-viewtype li.active a,
 .size-guide a:hover,
 .review-reference .review:hover,
-.heading-icon:hover{ color:#ff7300;}
+.heading-icon:hover,
+.artikel > .viewall > a:hover{ color:#ff7300;}
 /* =============================================
 			All Background Colors
 ============================================= */
@@ -224,4 +227,9 @@ a:hover, a:focus, a:active,
 .quicklink a:hover { color: #ff7300 }
 .footer-bar p a { color: #fff; }
 .footer-bar p a:hover { text-decoration: underline; }
-.thumb-cart { width: 50px }
+.thumb-cart { width: 50px; }
+.empty { background: #bcbcbc !important; }
+.hot { background: #ff0000 !important; }
+.new { background: #6875FF !important; }
+.category li a { color: #313131; }
+.category li a:hover { color: #ff7300; }
