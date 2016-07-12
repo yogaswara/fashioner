@@ -1,4 +1,4 @@
-define(['jquery','lettering','gmap','jcf','owl','parallax'], function($,lettering,gmap3,jcf,owlCarousel)
+define(['jquery','lettering','gmap3','jcf','owl','parallax','appear'], function($,lettering,gmap3,jcf,owlCarousel)
 {
 	return new function()
 	{

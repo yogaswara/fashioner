@@ -55,7 +55,7 @@
 										<span class="total-products">Showing products 01-09 of 78</span> -->
 									</div>
 									<ul class="page-viewtype">
-										<li>
+										<li class="active">
 											<a id="grid-btn">
 												<i class="fa fa-th"></i>
 											</a>

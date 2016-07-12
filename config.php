@@ -60,6 +60,10 @@ return array(
         'testimonial'=>4,    
     ),
     'banner' => true,
-    'themesColor' => false,
+    'themesColor' => array(
+        'type'=> 'false',
+        'warnaDef'=>'main-color:#313131;secondary-color:#ff7300',
+        'color'=>false
+    ),
     'layout' => false,
 );

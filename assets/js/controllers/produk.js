@@ -1,4 +1,4 @@
-define(['jquery','nicescroll','jcf_select','jcf_checkbox','jcf_radio','caroufredsel'], function()
+define(['jquery','nicescroll','jcf_select','jcf_checkbox','jcf_radio','caroufredsel','fancybox'], function()
 {
 	return new function()
 	{
@@ -9,7 +9,15 @@ define(['jquery','nicescroll','jcf_select','jcf_checkbox','jcf_radio','caroufred
 			$(document).ready(function() {
 				// PRODUCT INCREASE
 				$('em.minus').on('click', function () {
-					$('#quantity1').val(parseInt($('#quantity1').val()) - 1, 10);
+					var currentVal = parseInt($('#quantity1').val());
+					// If it isn't undefined or its greater than 0
+					if (!isNaN(currentVal) && currentVal > 0) {
+						// Decrement one
+						$('#quantity1').val(currentVal - 1);
+					} else {
+						// Otherwise put a 0 there
+						$('#quantity1').val(0);
+					}
 				});
 				$('em.plus').on('click', function () {
 					$('#quantity1').val(parseInt($('#quantity1').val()) + 1, 10);
@@ -44,11 +52,24 @@ define(['jquery','nicescroll','jcf_select','jcf_checkbox','jcf_radio','caroufred
 				$("#grid-btn").click(function() {
 					$(".list-type").hide();
 					$(".grid-type").show('fast');
+					$(this).parent().addClass('active');
+					$('#list-btn').parent().removeClass('active');
 				});
 				$("#list-btn").click(function() {
 					$(".grid-type").hide();
 					$(".list-type").show('fast');
+					$(this).parent().addClass('active');
+					$('#grid-btn').parent().removeClass('active');
 				});
+
+				// Image zoom
+				$('.fancybox').fancybox({
+                    padding: 10,
+                    openEffect : 'elastic',
+                    openSpeed  : 150,
+                    closeEffect : 'elastic',
+                    closeSpeed  : 150
+                });
 			});
 		};
 

@@ -14,7 +14,7 @@
 					<img alt="image description thumb-cart" src="{{ product_image_url($cart['image'],'thumb') }}" alt="{{ $cart['name'] }}">
 				</div>
 				<div class="detail">
-					<span class="product-title">{{ $cart['name'] }}</span>
+					<span class="product-title"><a href="{{ URL::to('produk/'.@$cart['slug']) }}">{{ $cart['name'] }}</a></span>
 					<span class="price">Price: {{ price($cart['price']) }}</span>
 					<span class="quantity">Quantity: {{ $cart['qty'] }}</span>
 				</div>

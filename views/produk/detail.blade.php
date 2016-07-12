@@ -89,27 +89,35 @@
 								<div class="tab-content">
 									@if($produk->gambar1 != '')
 									<div role="tabpanel" class="tab-pane fade in active" id="thumbone">
-										<img src="{{ product_image_url($produk->gambar1,'medium') }}" alt="{{ $produk->nama }} 1">
+										<a class="fancybox" href="{{ product_image_url($produk->gambar1,'large') }}" title="{{ $produk->nama }}">
+											<img src="{{ product_image_url($produk->gambar1,'medium') }}" alt="{{ $produk->nama }} 1">
+										</a>
 									</div>
 									@endif
 									@if($produk->gambar2 != '')
 									<div role="tabpanel" class="tab-pane fade" id="thumbtwo">
-										<img src="{{ product_image_url($produk->gambar2,'medium') }}" alt="{{ $produk->nama }} 2">
+										<a class="fancybox" href="{{ product_image_url($produk->gambar2,'large') }}" title="{{ $produk->nama }}">
+											<img src="{{ product_image_url($produk->gambar2,'medium') }}" alt="{{ $produk->nama }} 2">
+										</a>
 									</div>
 									@endif
 									@if($produk->gambar3 != '')
 									<div role="tabpanel" class="tab-pane fade" id="thumbthree">
-										<img src="{{ product_image_url($produk->gambar3,'medium') }}" alt="{{ $produk->nama }} 3">
+										<a class="fancybox" href="{{ product_image_url($produk->gambar3,'large') }}" title="{{ $produk->nama }}">
+											<img src="{{ product_image_url($produk->gambar3,'medium') }}" alt="{{ $produk->nama }} 3">
+										</a>
 									</div>
 									@endif
 									@if($produk->gambar4 != '')
 									<div role="tabpanel" class="tab-pane fade" id="thumbthree">
-										<img src="{{ product_image_url($produk->gambar4,'medium') }}" alt="{{ $produk->nama }} 4">
+										<a class="fancybox" href="{{ product_image_url($produk->gambar4,'large') }}" title="{{ $produk->nama }}">
+											<img src="{{ product_image_url($produk->gambar4,'medium') }}" alt="{{ $produk->nama }} 4">
+										</a>
 									</div>
 									@endif
 								</div>
 							</div>
-							<p><i class="fa fa-search"></i> Roll over image to zoom in</p>
+							<p><i class="fa fa-search"></i> Click image to zoom in</p>
 						</div>
 					</div>
 					<div class="col-sm-6">

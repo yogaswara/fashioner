@@ -1,4 +1,4 @@
-define(['jquery','isotope'], function($,Isotope)
+define(['jquery','isotope','prettyphoto'], function($,Isotope)
 {
 	return new function()
 	{
@@ -62,6 +62,18 @@ define(['jquery','isotope'], function($,Isotope)
 						$(this).parent().addClass('select').siblings().removeClass('select');
 					}
 				});
+
+				// Pretty Photo Gallery
+				$("a[data-rel]").each(function () {
+					$(this).attr("rel", $(this).data("rel"));
+				});
+				$("a[data-rel^='prettyPhoto']").prettyPhoto({
+					animation_speed:'normal',
+					theme:'dark_square',
+					slideshow:3000,
+					autoplay_slideshow: true,
+					social_tools: false
+				});
 			});
 		};
 
@@ -70,49 +82,52 @@ define(['jquery','isotope'], function($,Isotope)
 			var container = $('.portfolio-content');
 			var optionSets = $('.option-set');
 			var optionLinks = optionSets.find('a');
-			if ($(this).isotope) {
-				alert('hai');
-				var isotopeFilter = '';
-				optionLinks.each(function () {
-					var selector = $(this).attr('data-filter');
-					var link = window.location.href;
-					var firstIndex = link.indexOf('filter=');
-					if (firstIndex > 0) {
-						var id = link.substring(firstIndex + 7, link.length);
-						if ('.' + id == selector) {
-							isotopeFilter = '.' + id;
-						}
-					}
-				});
-				if (isotopeFilter.length > 0) {
-					container.isotope({
-						itemSelector: '.gallery-product',
-						filter: isotopeFilter
-					});
+
+			require( [ 'bridget' ],function( jQueryBridget ) {
+				jQueryBridget( 'isotope', Isotope, $ );
+				if ($().isotope) {
+					var isotopeFilter = '';
 					optionLinks.each(function () {
-						var $this = $(this);
-						var selector = $this.attr('data-filter');
-						if (selector == isotopeFilter) {
-							if (!$this.hasClass('selected')) {
-								var $optionSet = $this.parents('.option-set');
-								$optionSet.find('.selected').removeClass('selected');
-								$this.addClass('selected');
+						var selector = $(this).attr('data-filter');
+						var link = window.location.href;
+						var firstIndex = link.indexOf('filter=');
+						if (firstIndex > 0) {
+							var id = link.substring(firstIndex + 7, link.length);
+							if ('.' + id == selector) {
+								isotopeFilter = '.' + id;
 							}
 						}
 					});
-				}
-				optionLinks.on('click', function () {
-					var $this = $(this);
-					var selector = $this.attr('data-filter');
-					container.isotope({itemSelector: '.gallery-product', filter: selector});
-					if (!$this.hasClass('selected')) {
-						var $optionSet = $this.parents('.option-set');
-						$optionSet.find('.selected').removeClass('selected');
-						$this.addClass('selected');
+					if (isotopeFilter.length > 0) {
+						container.isotope({
+							itemSelector: '.gallery-product',
+							filter: isotopeFilter
+						});
+						optionLinks.each(function () {
+							var $this = $(this);
+							var selector = $this.attr('data-filter');
+							if (selector == isotopeFilter) {
+								if (!$this.hasClass('selected')) {
+									var optionSet = $this.parents('.option-set');
+									optionSet.find('.selected').removeClass('selected');
+									$this.addClass('selected');
+								}
+							}
+						});
 					}
-					return false;
-				});
-			}
+					optionLinks.on('click', function () {
+						var $this = $(this);
+						var selector = $this.attr('data-filter');
+						container.isotope({itemSelector: '.gallery-product', filter: selector});
+						if (!$this.hasClass('selected')) {
+							var optionSet = $this.parents('.option-set');
+							optionSet.find('.selected').removeClass('selected');
+							$this.addClass('selected');
+						}
+						return false;
+					});
+				}
+			});
 		}
 	};
 });

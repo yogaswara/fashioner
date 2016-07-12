@@ -177,7 +177,7 @@ ol li {
     list-style: decimal;
     width: 100%;
 }
-.cart_dialog .mini-cart-info td { border: none; }
+.cart_dialog .mini-cart-info td { border: none; text-align: left; }
 table {
     background-color: transparent;
     max-width: 100%;
@@ -655,7 +655,7 @@ a:active{}
 }
 .dropdown-menu.cartitems .cart-list li .detail{
     float:left;
-    width:175px;
+    width:160px;
 }
 .dropdown-menu.cartitems .cart-list li .detail span{
     display:block;
@@ -684,7 +684,7 @@ a:active{}
     position:absolute;
     right:0;
 }
-.top-bar .social-icon{ padding:0 0 0 25px;}
+.top-bar .social-icon{ padding:0 0 0 25px; min-width: 140px; }
 .navbar,
 .navbar-header{ border:0;}
 .logo{
@@ -844,8 +844,8 @@ body.home #main{
     background-size:100% auto;
 }
 body.home .fashioner{
-    padding:150px 0 90px;
-    background:url(../images/bg-deal.jpg) no-repeat 50% 0;
+    padding:250px 0 90px;
+    background:url(../images/bg-fashioner.png) no-repeat 50% 0;
 }
 .fashioner{ background:#fff;}
 .heading-pattern h2{
@@ -2217,7 +2217,7 @@ input[type="checkbox"], input[type="radio"]{
 
 }
 .btn-shopnow, .theme-btn{
-    z-index: 99999;
+    z-index: 999;
     position: relative;
 }
 .theme-btn-sm.btn-shopnow:hover{ background:#ff7300;}
@@ -3115,7 +3115,8 @@ table#table-order > tbody > tr > td { text-align: left !important; }
 #powerup form input[value="Cek Resi"]:hover {
     background-color: #ff7300;
 }
-#event-slider { min-height: 135px; }
+#event-slider { min-height: 140px; }
 .product-options { float: none; padding: 0 0 20px; }
 .product-options .jcf-select { width: 100% !important; }
 #grid-btn, #list-btn { cursor: pointer; }
+#home-slider { z-index: 5 }
